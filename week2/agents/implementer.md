@@ -46,19 +46,12 @@ model: sonnet
 - **계산식 분해**: 중첩된 계산식은 의미 단위로 변수에 분리하여 가독성 확보
   ```kotlin
   // ❌
-  return (COOLDOWN_MS - (System.currentTimeMillis() - pokedAt)).coerceAtLeast(0L)
-  // ✅
-  val elapsedMs = currentTime - pokedAt
-  val remainingMs = COOLDOWN_MS - elapsedMs
-  return remainingMs.coerceAtLeast(0L)
-  ```
-  ```kotlin
-  // ❌
   val overflow = min((speed - dragVelocityThreshold) / dragVelocityThreshold, 1f)
   // ✅
   val excessSpeed = speed - dragVelocityThreshold
   val overflowRatio = excessSpeed / dragVelocityThreshold
   val overflow = min(overflowRatio, 1f)
+  return overflow
   ```
 - **크기 제한**: 클래스 50줄, 메서드 15줄 초과 시 분리
 - **onEvent 위임**: 분기에서 로직 직접 작성 금지, 반드시 별도 함수로 위임
