@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1010" width="1000" height="1010">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d97706"/>
+      <stop offset="100%" style="stop-color:#b45309"/>
+    </linearGradient>
+    <linearGradient id="layer1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#1e40af"/>
+    </linearGradient>
+    <linearGradient id="layer2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a2e"/>
+      <stop offset="100%" style="stop-color:#166534"/>
+    </linearGradient>
+    <linearGradient id="layer3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b1a5f"/>
+      <stop offset="100%" style="stop-color:#6b21a8"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a855f7"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="1010" fill="url(#bgGrad)" rx="12"/>
+
+  <!-- Title -->
+  <text x="500" y="46" fill="#f0f6fc" font-family="monospace" font-size="22" font-weight="bold" text-anchor="middle">Claude Code 개발 워크플로우 자동화</text>
+  <text x="500" y="70" fill="#8b949e" font-family="monospace" font-size="14" text-anchor="middle">3-Layer Automation System</text>
+  <line x1="60" y1="84" x2="940" y2="84" stroke="#30363d" stroke-width="1"/>
+
+  <!-- USER REQUEST -->
+  <rect x="350" y="100" width="300" height="58" rx="29" fill="url(#claudeGrad)" filter="url(#shadow)"/>
+  <text x="500" y="124" fill="#fff8e1" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle">👤 사용자 요청</text>
+  <text x="500" y="145" fill="#fde68a" font-family="monospace" font-size="13" text-anchor="middle">"무한 스크롤 추가해줘"</text>
+
+  <line x1="500" y1="158" x2="500" y2="182" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- ===== LAYER 1: CLAUDE.md (y=185, height=156) ===== -->
+  <rect x="60" y="185" width="880" height="156" rx="10" fill="url(#layer1Grad)" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="82" y="213" fill="#93c5fd" font-family="monospace" font-size="13" font-weight="bold">LAYER 1</text>
+  <text x="180" y="213" fill="#60a5fa" font-family="monospace" font-size="16" font-weight="bold">CLAUDE.md</text>
+  <text x="780" y="213" fill="#3b82f6" font-family="monospace" font-size="12" text-anchor="middle">세션 시작 시 자동 로드</text>
+  <line x1="80" y1="221" x2="920" y2="221" stroke="#1e40af" stroke-width="1"/>
+
+  <!-- Layer 1 cards (y=231, height=96) -->
+  <rect x="80" y="231" width="400" height="96" rx="6" fill="#0f2040" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="280" y="260" fill="#93c5fd" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">📋 라우팅 규칙</text>
+  <text x="94" y="280" fill="#bfdbfe" font-family="monospace" font-size="12">구현 / 수정 / 추가 / 고쳐줘</text>
+  <text x="94" y="298" fill="#60a5fa" font-family="monospace" font-size="13" font-weight="bold">→ 반드시 implementer 에이전트 사용</text>
+  <text x="94" y="316" fill="#6b7280" font-family="monospace" font-size="11">코드 한 줄도 직접 작성 금지</text>
+
+  <rect x="500" y="231" width="400" height="96" rx="6" fill="#0f2040" stroke="#1d4ed8" stroke-width="1"/>
+  <text x="700" y="260" fill="#93c5fd" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">🏗️ 아키텍처 컨텍스트</text>
+  <text x="514" y="280" fill="#bfdbfe" font-family="monospace" font-size="12">• Clean Architecture (Domain→Data→UI)</text>
+  <text x="514" y="298" fill="#bfdbfe" font-family="monospace" font-size="12">• MVI (UiState / UiEvent / SideEffect)</text>
+  <text x="514" y="316" fill="#bfdbfe" font-family="monospace" font-size="12">• Koin DI, Kotlin Coroutines</text>
+
+  <!-- Arrow (Layer1 bottom=341) -->
+  <line x1="500" y1="341" x2="500" y2="365" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+
+  <!-- ===== LAYER 2: AGENTS (y=368, height=262) ===== -->
+  <rect x="60" y="368" width="880" height="262" rx="10" fill="url(#layer2Grad)" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="82" y="396" fill="#86efac" font-family="monospace" font-size="13" font-weight="bold">LAYER 2</text>
+  <text x="180" y="396" fill="#4ade80" font-family="monospace" font-size="16" font-weight="bold">.claude/agents/</text>
+  <text x="780" y="396" fill="#22c55e" font-family="monospace" font-size="12" text-anchor="middle">역할별 전문 에이전트</text>
+  <line x1="80" y1="404" x2="920" y2="404" stroke="#166534" stroke-width="1"/>
+
+  <!-- implementer (y=416, height=184) -->
+  <rect x="80" y="416" width="220" height="184" rx="8" fill="#0a2a14" stroke="#16a34a" stroke-width="2" filter="url(#glow)"/>
+  <text x="190" y="444" fill="#4ade80" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle">🔨 implementer</text>
+  <text x="94" y="467" fill="#a7f3d0" font-family="monospace" font-size="11">코드 구현 전담 에이전트</text>
+  <text x="94" y="487" fill="#6ee7b7" font-family="monospace" font-size="12">• 브랜치 검증 / Issue 생성</text>
+  <text x="94" y="506" fill="#6ee7b7" font-family="monospace" font-size="12">• 컨벤션 강제 적용</text>
+  <text x="94" y="525" fill="#6ee7b7" font-family="monospace" font-size="12">• get/set 금지, 50줄 제한</text>
+  <text x="94" y="544" fill="#6ee7b7" font-family="monospace" font-size="12">• 작업 회고 / diary 기록</text>
+  <rect x="80" y="578" width="220" height="22" rx="4" fill="#14532d"/>
+  <text x="190" y="593" fill="#bbf7d0" font-family="monospace" font-size="11" text-anchor="middle">← /impl, /plan-impl</text>
+
+  <!-- Agent row 1 (y=416, height=98) -->
+  <rect x="320" y="416" width="148" height="98" rx="6" fill="#0a2a14" stroke="#15803d" stroke-width="1"/>
+  <text x="394" y="444" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">🧪 tester</text>
+  <text x="332" y="468" fill="#86efac" font-family="monospace" font-size="12">테스트 작성</text>
+  <text x="332" y="488" fill="#6b7280" font-family="monospace" font-size="11">Unit / UI Test</text>
+
+  <rect x="480" y="416" width="148" height="98" rx="6" fill="#0a2a14" stroke="#15803d" stroke-width="1"/>
+  <text x="554" y="444" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">📦 committer</text>
+  <text x="492" y="468" fill="#86efac" font-family="monospace" font-size="12">커밋 메시지 작성</text>
+  <text x="492" y="488" fill="#6b7280" font-family="monospace" font-size="11">← /commit</text>
+
+  <rect x="640" y="416" width="148" height="98" rx="6" fill="#0a2a14" stroke="#15803d" stroke-width="1"/>
+  <text x="714" y="444" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">🚀 pr-creator</text>
+  <text x="652" y="468" fill="#86efac" font-family="monospace" font-size="12">PR 자동 생성</text>
+  <text x="652" y="488" fill="#6b7280" font-family="monospace" font-size="11">← /pr</text>
+
+  <rect x="800" y="416" width="140" height="98" rx="6" fill="#0a2a14" stroke="#15803d" stroke-width="1"/>
+  <text x="870" y="444" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">🔍 reviewer</text>
+  <text x="812" y="468" fill="#86efac" font-family="monospace" font-size="12">코드 리뷰</text>
+  <text x="812" y="488" fill="#6b7280" font-family="monospace" font-size="11">Dove Letter 기준</text>
+
+  <!-- Agent row 2 (y=526, height=76) -->
+  <rect x="320" y="526" width="148" height="76" rx="6" fill="#0a2a14" stroke="#15803d" stroke-width="1"/>
+  <text x="394" y="554" fill="#4ade80" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">⚡ perf-opt</text>
+  <text x="332" y="577" fill="#6b7280" font-family="monospace" font-size="11">성능 최적화</text>
+
+  <!-- Arrow (Layer2 bottom=630) -->
+  <line x1="500" y1="630" x2="500" y2="654" stroke="#a855f7" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+
+  <!-- ===== LAYER 3: HOOKS (y=657, height=180) ===== -->
+  <rect x="60" y="657" width="880" height="180" rx="10" fill="url(#layer3Grad)" stroke="#a855f7" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="82" y="686" fill="#d8b4fe" font-family="monospace" font-size="13" font-weight="bold">LAYER 3</text>
+  <text x="180" y="686" fill="#c084fc" font-family="monospace" font-size="16" font-weight="bold">settings.local.json — Hooks</text>
+  <text x="780" y="686" fill="#a855f7" font-family="monospace" font-size="12" text-anchor="middle">시스템 레벨 강제</text>
+  <line x1="80" y1="694" x2="920" y2="694" stroke="#6b21a8" stroke-width="1"/>
+
+  <!-- Hook cards (y=706, height=116) -->
+  <rect x="80" y="706" width="400" height="116" rx="6" fill="#1e0a3a" stroke="#7c3aed" stroke-width="1"/>
+  <text x="280" y="732" fill="#c084fc" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">PostToolUse: Edit | Write</text>
+  <text x="94" y="756" fill="#ddd6fe" font-family="monospace" font-size="12">트리거: .kt 파일 수정 시</text>
+  <text x="94" y="778" fill="#a78bfa" font-family="monospace" font-size="13" font-weight="bold">→ ktlintFormat 자동 실행</text>
+  <text x="94" y="800" fill="#6b7280" font-family="monospace" font-size="11">LLM이 포맷을 신경 쓸 필요 없음</text>
+
+  <rect x="500" y="706" width="400" height="116" rx="6" fill="#1e0a3a" stroke="#7c3aed" stroke-width="1"/>
+  <text x="700" y="732" fill="#c084fc" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">PreToolUse: git commit</text>
+  <text x="514" y="756" fill="#ddd6fe" font-family="monospace" font-size="12">트리거: 커밋 명령 직전</text>
+  <text x="514" y="778" fill="#a78bfa" font-family="monospace" font-size="13" font-weight="bold">→ ktlintCheck 자동 실행</text>
+  <text x="514" y="800" fill="#6b7280" font-family="monospace" font-size="11">위반 코드는 커밋 자체가 불가</text>
+
+  <!-- Arrow (Layer3 bottom=837) -->
+  <line x1="500" y1="837" x2="500" y2="861" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+
+  <!-- RESULT -->
+  <rect x="200" y="864" width="560" height="68" rx="10" fill="#1a1000" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="500" y="893" fill="#fbbf24" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle">✅ 결과</text>
+  <text x="500" y="917" fill="#fde68a" font-family="monospace" font-size="13" text-anchor="middle">내가 코드를 직접 작성하지 않아도 컨벤션이 지켜진다</text>
+
+  <!-- DIARY FEEDBACK LOOP -->
+  <rect x="778" y="864" width="182" height="108" rx="8" fill="#1a1000" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="869" y="890" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">📓 diary 피드백 루프</text>
+  <text x="790" y="912" fill="#fde68a" font-family="monospace" font-size="11">시행착오 기록</text>
+  <text x="790" y="932" fill="#fde68a" font-family="monospace" font-size="11">→ 에이전트 프롬프트 개선</text>
+  <text x="790" y="952" fill="#fde68a" font-family="monospace" font-size="11">→ 같은 실수 반복 방지</text>
+  <path d="M 869 864 Q 960 740 940 560" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#arrowOrange)"/>
+
+  <!-- Footer -->
+  <line x1="60" y1="988" x2="940" y2="988" stroke="#30363d" stroke-width="1"/>
+  <text x="500" y="1002" fill="#484f58" font-family="monospace" font-size="12" text-anchor="middle">chanho0908 · AI Agent Study Week 2 · 2026</text>
+</svg>
