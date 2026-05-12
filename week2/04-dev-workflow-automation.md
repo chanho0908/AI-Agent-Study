@@ -4,6 +4,10 @@
 
 ---
 
+![dev-workflow-automation](images/dev-workflow-automation.svg)
+
+---
+
 ## 배경: 문제 정의
 
 안드로이드 앱 프로젝트를 Claude Code로 개발하다가 한 가지 문제가 생겼다.
