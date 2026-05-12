@@ -39,7 +39,7 @@ tools: Read, Write, Edit, Glob, Grep, Bash
 
 ```
 
-** 2.1 `/impl` 슬래시 커맨드 작성**
+## ** 2.1 `/impl` 슬래시 커맨드 작성**
 
 매번 에이전트 이름을 입력하기 번거로우니, `.claude/commands/impl.md`로 단축 커맨드를 만들었다.
 
