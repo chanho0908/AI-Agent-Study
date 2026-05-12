@@ -7,25 +7,7 @@
 
 Claude Code는 `.claude/agents/` 디렉토리에 마크다운 파일을 두면 서브에이전트를 정의할 수 있다.
 
-**`implementer.md` 작성** : 아키텍처 원칙, 네이밍 컨벤션, 코드 스타일을 전부 정의
-
-```markdown
----
-name: implementer
-description: 코드를 직접 구현하는 에이전트
-tools: Read, Write, Edit, Glob, Grep, Bash
----
-
-## 아키텍처 원칙
-- Clean Architecture: UI → Presentation → Domain → Data 레이어 엄격히 분리
-- MVI: UiState / UiEvent / SideEffect로 단방향 데이터 흐름
-
-## 코드 컨벤션
-- get/set 접두사 금지 → fetch, load, update 사용
-- else 금지 → early return 또는 when
-- 클래스 50줄, 메서드 15줄 초과 시 분리
-
----
+**[`implementer.md`](https://github.com/chanho0908/AI-Agent-Study/blob/main/week2/agents/implementer.md) 작성** : 아키텍처 원칙, 네이밍 컨벤션, 코드 스타일을 전부 정의
 
 ## 2. 문제 상황
 
@@ -37,9 +19,7 @@ tools: Read, Write, Edit, Glob, Grep, Bash
 
 **핵심 질문:** LLM이 항상 내가 정의한 에이전트를 통해 코드를 작성하게 강제할 수 있을까?
 
-```
-
-## ** 2.1 `/impl` 슬래시 커맨드 작성**
+## 2.1 `/impl` 슬래시 커맨드 작성
 
 매번 에이전트 이름을 입력하기 번거로우니, `.claude/commands/impl.md`로 단축 커맨드를 만들었다.
 
@@ -70,7 +50,7 @@ $ARGUMENTS 작업을 implementer 에이전트를 사용해서 구현해줘.
 
 ## Layer 1: CLAUDE.md — 라우팅 규칙
 
-Claude Code는 세션 시작 시 `CLAUDE.md`를 자동으로 읽는다. 여기에 핵심 규칙을 박아넣었다.
+Claude Code는 세션 시작 시 `CLAUDE.md`를 자동으로 읽는다. 여기에 핵심 규칙을 넣었다.
 
 ```markdown
 ## 필수 규칙
@@ -201,7 +181,7 @@ pr-creator 에이전트: GitHub PR 자동 생성
 
 "ktlint 검증하세요"라고 프롬프트에 써놔도 LLM이 잊거나 건너뛸 수 있다. Hooks는 LLM이 아닌 **시스템 레벨**에서 강제하기 때문에 예외가 없다.
 
-### 4. diary로 에이전트 개선 루프
+### 4. diary로 피드백 루프 구축
 
 작업마다 시행착오를 `.claude/diary/`에 기록하고, 그 내용을 에이전트 프롬프트에 반영한다. 에이전트가 같은 실수를 반복하지 않도록 하는 피드백 루프다.
 
